@@ -1,7 +1,13 @@
 import React from 'react'
 
-export const Task = () => {
+export const Task = ({ name, status, markAsDone, deleteTask }) => {
   return (
-    <div>Task</div>
+    <>
+      <p>{name} - {status === 'pending' ? '⏳ Pending' : '✅ Completed'}</p>
+      <div>
+          <button onClick={markAsDone}>Done</button>
+          <button onClick={deleteTask}>Delete</button>
+      </div>
+    </>
   )
 }
